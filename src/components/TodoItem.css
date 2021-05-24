@@ -1,0 +1,14 @@
+.item-card {
+  padding: 10px !important;
+  text-align: center;
+  border-radius: 15px !important;
+}
+.completed {
+  background-color: #99f3bd !important;
+  padding: 10px !important;
+  text-align: center;
+  border-radius: 15px !important;
+}
+.completed-text {
+  text-decoration: line-through;
+}
