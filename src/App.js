@@ -16,24 +16,24 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    const FilterHandler = () => {
+      if (status === 'completed') {
+        setFilter(todos.filter((todo) => todo.completed === true));
+      } else if (status === 'pending') {
+        setFilter(todos.filter((todo) => todo.completed === false));
+      } else {
+        setFilter(todos);
+      }
+    };
     FilterHandler();
+    //save to local Storage
+    const saveLocalTodos = () => {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    };
     saveLocalTodos();
   }, [todos, status]);
 
-  const FilterHandler = () => {
-    if (status === 'completed') {
-      setFilter(todos.filter((todo) => todo.completed === true));
-    } else if (status === 'pending') {
-      setFilter(todos.filter((todo) => todo.completed === false));
-    } else {
-      setFilter(todos);
-    }
-  };
-
   //save to local Storage
-  const saveLocalTodos = () => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  };
   const getLocalTodos = () => {
     if (localStorage.getItem('todos') === null) {
       localStorage.setItem('todos', JSON.stringify([]));
