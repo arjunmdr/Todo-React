@@ -30,7 +30,7 @@ const TodoItem = ({ todos, setTodos, todo, setFilter }) => {
   return (
     <div>
       <Grid container direction='row' justify='center' alignItems='center'>
-        <Grid md={6} xl={3}>
+        <Grid item md={6} xl={3}>
           <Card
             variant='outlined'
             className={` ${todo.completed ? 'completed' : 'item-card'}`}
