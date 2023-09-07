@@ -1,0 +1,13 @@
+name: DEV CICD
+on:
+  pull_request:
+    branches:
+      - dev
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 (Build) - execute some sample commands
+        run: |
+          pwd
+          echo "Hello github actions!"
